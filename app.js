@@ -18,7 +18,7 @@ const tiles = document.querySelectorAll('.tile')
 
 tiles.forEach((tile) => {
 
-  tile.addEventListener('mouseover', () => {
-    console.log("Hello")
+   tile.addEventListener('mouseover', () => {
+   tile.className = "coloredIn"
   })
 })
