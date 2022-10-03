@@ -13,3 +13,12 @@ function createDivSquares() {
 }
 
 createDivSquares()
+
+const tiles = document.querySelectorAll('.tile')
+
+tiles.forEach((tile) => {
+
+  tile.addEventListener('mouseover', () => {
+    console.log("Hello")
+  })
+})
