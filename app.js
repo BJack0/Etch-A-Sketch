@@ -1,8 +1,8 @@
 console.log("Hello World")
 
-const gridContainer = document.querySelector(".gridContainer")
+const gridSizerBtn = document.querySelector("#gridSizer")
 
-
+const gridContainer = document.querySelector("#gridContainer")
 
 function createDivSquares() {
    for (let i = 0; i < 256; i++) {
@@ -11,7 +11,6 @@ function createDivSquares() {
    gridContainer.appendChild(div)
    }
 }
-
 createDivSquares()
 
 const tiles = document.querySelectorAll('.tile')
