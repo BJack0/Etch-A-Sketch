@@ -1,19 +1,19 @@
 #gridContainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  height: 500px;
+  width: 500px;
+  /* display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .tile {
-  height: 110px;
-  width: 110px;
-  /* background-color: #000000;
-  border: 1px solid rgb(0, 225, 255);
-  */
+  background-color: #ffffff;
+  /* border: 1px solid rgb(0, 225, 255); */ */
 }
 
 .coloredIn {
-  height: 110px;
-  width: 110px;
   background-color: black;
 }
