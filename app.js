@@ -11,6 +11,7 @@ function createDivSquares() {
    gridContainer.appendChild(div)
    }
 }
+
 createDivSquares()
 
 const tiles = document.querySelectorAll('.tile')
@@ -23,26 +24,32 @@ tiles.forEach((tile) => {
 })
 
 function gridSizePrompt() {
-   let gridsize = prompt("Please select a grid size", "16")
-   gridsize = parseInt(gridsize)
+   gridSize = prompt("Please select a grid size", "16")
+   gridSize = parseInt(gridSize)
 
-   if (gridsize === null) {
+   if (gridSize === null) {
       return
    }
    
-   if (typeof gridsize !== "number") {
+   if (typeof gridSize !== "number") {
       alert("Please enter a number")
       gridSizePrompt()
       return
    }
 
-   if (gridsize > 100) {
+   if (gridSize > 100) {
       alert("Max grid size is 100")
       gridSizePrompt()
       return
    }
 }
 
+function updateGrid() {
+   document.getElementById("gridContainer").style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`
+   document.getElementById("gridContainer").style.gridTemplateRows = `repeat(${gridSize}, 1fr)`
+}
+
 gridSizerBtn.addEventListener('click', () => {
    gridSizePrompt()
-  })
+   updateGrid()
+})
