@@ -21,3 +21,28 @@ tiles.forEach((tile) => {
    tile.className = "coloredIn"
   })
 })
+
+function gridSizePrompt() {
+   let gridsize = prompt("Please select a grid size", "16")
+   gridsize = parseInt(gridsize)
+
+   if (gridsize === null) {
+      return
+   }
+   
+   if (typeof gridsize !== "number") {
+      alert("Please enter a number")
+      gridSizePrompt()
+      return
+   }
+
+   if (gridsize > 100) {
+      alert("Max grid size is 100")
+      gridSizePrompt()
+      return
+   }
+}
+
+gridSizerBtn.addEventListener('click', () => {
+   gridSizePrompt()
+  })
