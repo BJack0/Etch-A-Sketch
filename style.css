@@ -10,9 +10,6 @@
   grid-template-rows: repeat(16, 1fr);
   height: 500px;
   width: 500px;
-  /* display: flex;
-  flex-flow: row wrap;
-  justify-content: center; */
 }
 
 #controls {
@@ -24,7 +21,6 @@
 
 .tile {
   background-color: #ffffff;
-  border: 1px solid rgb(0, 0, 0);
 }
 
 .coloredIn {
