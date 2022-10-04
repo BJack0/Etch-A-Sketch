@@ -4,17 +4,18 @@ const gridSizerBtn = document.querySelector("#gridSizer")
 
 const gridContainer = document.querySelector("#gridContainer")
 
-function createDivSquares() {
-   for (let i = 0; i < 256; i++) {
+function createDivSquares(gridSize) {
+   for (let i = 0; i < (gridSize * gridSize); i++) {
    let div = document.createElement("div")
    div.className = "tile"
    gridContainer.appendChild(div)
    }
 }
 
-createDivSquares()
+createDivSquares(16)
 
-const tiles = document.querySelectorAll('.tile')
+function draw() {
+   const tiles = document.querySelectorAll('.tile')
 
 tiles.forEach((tile) => {
 
@@ -22,6 +23,9 @@ tiles.forEach((tile) => {
    tile.className = "coloredIn"
   })
 })
+}
+
+draw()
 
 function gridSizePrompt() {
    gridSize = prompt("Please select a grid size", "16")
@@ -44,6 +48,20 @@ function gridSizePrompt() {
    }
 }
 
+function clearGrid() {
+   var tiles = document.querySelectorAll('.tile');
+
+   tiles.forEach(tile =>{
+   tile.remove()
+   })
+   
+   var colors = document.querySelectorAll('.coloredIn');
+
+   colors.forEach(color =>{
+   color.remove()
+})
+}
+
 function updateGrid() {
    document.getElementById("gridContainer").style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`
    document.getElementById("gridContainer").style.gridTemplateRows = `repeat(${gridSize}, 1fr)`
@@ -51,5 +69,8 @@ function updateGrid() {
 
 gridSizerBtn.addEventListener('click', () => {
    gridSizePrompt()
+   clearGrid()
    updateGrid()
+   createDivSquares(gridSize)
+   draw()
 })
